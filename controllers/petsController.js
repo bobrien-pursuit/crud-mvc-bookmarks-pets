@@ -11,11 +11,14 @@ pets.get('/', (req, res) => {
 //localhost:4401/pets
 pets.get(`/:arrayIndex`, (req, res) => {
     const { arrayIndex } = req.params;
-    if (petsArray[arrayIndex])
-    res.json(petsArray[arrayIndex]);
-    else
+
+    petsArray[arrayIndex] ? 
+    res.json(petsArray[arrayIndex]) : 
     res.status(404).json({error: "Not Found"});
+
 });
+
+
 
 
 module.exports = pets
