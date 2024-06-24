@@ -19,7 +19,7 @@ bookmarks.get('/:arrayIndex', (req, res) => {
     if (bookmarksArray[arrayIndex]) 
     res.json(bookmarksArray[arrayIndex]);
     else 
-    res.json(404).json({ error: "Not Found" });
+    res.status(404).json({ error: "Not Found" });
 })
 
 
