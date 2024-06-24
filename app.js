@@ -6,10 +6,14 @@ const petsController = require('./controllers/petsController')
 // Create an instance of the express server
 const app = express()
 
-
 // Middleware
+
+//tells our app to use json
+app.use(express.json());
+
 // Whenever the URL starts with: localhost:4001/bookmarks -- hand the request off the bookmarksController to route it appropriately
-app.use('/bookmarks', bookmarksController)
+app.use('/bookmarks', bookmarksController);
+
 
 // localhost:4001/pets - we hand the request off to the petsController
 app.use('/pets', petsController)

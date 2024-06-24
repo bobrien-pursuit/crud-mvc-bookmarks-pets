@@ -20,9 +20,16 @@ bookmarks.get('/:arrayIndex', (req, res) => {
     (bookmarksArray[arrayIndex]) ? 
     res.json(bookmarksArray[arrayIndex]) :
     res.status(404).json({ error: "Not Found" });
-    
+
 })
 
+// POST: creates a new bookmark and adds to JSON
+
+//localhost:4001/bookmarks/
+bookmarks.post(`/`, (req, res) => {
+    bookmarksArray.push(req.body);
+    res.json(bookmarksArray[bookmarksArray.length - 1]);
+})
 
 
 
