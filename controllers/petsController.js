@@ -8,5 +8,11 @@ pets.get('/', (req, res) => {
     res.json(petsArray)
 })
 
+//localhost:4401/pets
+pets.get(`/:arrayIndex`, (req, res) => {
+    const { arrayIndex } = req.params;
+    res.json(petsArray[arrayIndex]);
+})
+
 
 module.exports = pets

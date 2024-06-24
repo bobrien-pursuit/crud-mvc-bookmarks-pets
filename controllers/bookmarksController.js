@@ -12,6 +12,17 @@ bookmarks.get('/', (req, res) => {
     res.json(bookmarksArray)
 })
 
+// SHOW 
+
+bookmarks.get('/:arrayIndex', (req, res) => {
+    let { arrayIndex } = req.params;
+    if (bookmarksArray[arrayIndex]) 
+    res.json(bookmarksArray[arrayIndex]);
+    else 
+    res.json(404).json({ error: "Not Found" });
+})
+
+
 
 
 module.exports = bookmarks
