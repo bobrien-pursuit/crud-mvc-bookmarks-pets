@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 // Imports the bookmark controller
 const bookmarksController = require('./controllers/bookmarksController')
 const petsController = require('./controllers/petsController')
@@ -22,8 +22,5 @@ app.use('/pets', petsController)
 app.get('/', (req, res) => {
     res.send('Welcome to the Bookmarks App!')
 })
-
-
-
 
 module.exports = app
