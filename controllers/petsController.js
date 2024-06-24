@@ -14,7 +14,7 @@ pets.get(`/:arrayIndex`, (req, res) => {
     if (petsArray[arrayIndex])
     res.json(petsArray[arrayIndex]);
     else
-    res.status(404).json({error: "Not Found}"});
+    res.status(404).json({error: "Not Found"});
 });
 
 
