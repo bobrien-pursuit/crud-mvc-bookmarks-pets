@@ -43,10 +43,10 @@ bookmarks.delete(`/:arrayIndex`, (req, res) => {
 
     if (bookmarksArray[arrayIndex]) {
         bookmarksArray.splice(arrayIndex, 1);
-        res.redirect("/bookmarks");
+        res.json({error: "Bookmark Successfully Deleted."});
     }
     else
-        res.stutus(404).json( {error: "Not Found"});
+        res.status(404).json( {error: "Not Found"});
     // bookmarksArray[arrayIndex] ? 
     // res.status(200).json(bookmarksArray.splice(arrayIndex, 1)) :
     // res.status(404).json({ error: "Not Found"});
